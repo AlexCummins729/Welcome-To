@@ -1,3 +1,7 @@
+* {
+  touch-action: manipulation;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -396,6 +400,23 @@ button{
     cursor: pointer;
 }
 
+#originalDrawButton{
+    padding: 20px;
+    outline: 3px solid white;
+    background: rgba(0, 0, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+#moonDrawButton{
+    padding: 20px;
+    outline: 3px solid white;
+    background: rgba(89, 0, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
 .next-action{
     position: absolute;
     top: 2px;
@@ -435,7 +456,7 @@ button{
 }
 
 #originalBlock .round-number-container{
-    color: rgb(59, 59, 59);
+    color: rgb(255, 255, 255);
 }
 #moonBlock .round-number-container{
     color: rgb(167, 167, 167);
