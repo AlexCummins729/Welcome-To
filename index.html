@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A basic HTML template." />
+    <title>Welcome To Card Dealer</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="selectionWrapper">
+      <header>
+        <h1>Select Game</h1>
+      </header>
+      <main>
+        <img
+          src="images/Original Title.png"
+          style="left: 10%"
+          id="originalTitleImg"
+          onclick="startGame('original')"
+        />
+        <img
+          src="images/Moon Title.png"
+          style="left: 60%"
+          id="moonTitleImg"
+          onclick="startGame('moon')"
+        />
+      </main>
+      <footer></footer>
+    </div>
+    <div id="gameWrapper">
+      <div id="originalBlock" class="game-block">
+        <header>
+          <div class="spacing-row">
+            <button onclick="backToHome()" class="icon-button">
+              <img src="images/home-white.png" />
+            </button>
+            <h1>Welcome To... Your Perfect Home!</h1>
+            <button onclick="toggleAnimations(this)" class="icon-button">
+              <img src="images/waves-white.png" />
+            </button>
+          </div>
+        </header>
+        <main class="animated">
+          <div class="stats-block"></div>
+          <div class="card-block">
+            <div class="card-row" id="originalNumberRow">
+              <div class="card">
+                <img class="next-action" />
+                <div class="inner-card">
+                  <div class="number">#</div>
+                </div>
+              </div>
+              <div class="card">
+                <img class="next-action" />
+                <div class="inner-card">
+                  <div class="number">#</div>
+                </div>
+              </div>
+              <div class="card">
+                <img class="next-action" />
+                <div class="inner-card">
+                  <div class="number">#</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-row" id="originalActionRow">
+              <div class="card">
+                <div class="inner-card-back">
+                  <img class="action" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="inner-card-back">
+                  <img class="action" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="inner-card-back">
+                  <img class="action" />
+                </div>
+              </div>
+            </div>
+            <div class="button-container">
+              <button
+                type="button"
+                id="originalDrawButton"
+                onclick="showNextCards(this)"
+              >
+                Next Cards
+              </button>
+            </div>
+
+            <div class="round-number-container">
+              <p>
+                Rounds Until Shuffle: <span id="originalRoundCounter">25</span>
+              </p>
+            </div>
+          </div>
+        </main>
+        <div class="histogram-container number">
+          <div class="histogram-header">Card Frequency</div>
+          <div class="histogram number" id="originalNumberHistogram">
+            <div class="bar-container">
+              <div class="number-count">3</div>
+              <div class="bar-only" style="height: 25%">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">1</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">3</div>
+              <div class="bar-only" style="height: 25%">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">2</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">4</div>
+              <div class="bar-only" style="height: calc(25% * 4 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">3</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">5</div>
+              <div class="bar-only" style="height: calc(25% * 5 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">4</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">6</div>
+              <div class="bar-only" style="height: calc(25% * 6 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">5</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">7</div>
+              <div class="bar-only" style="height: calc(25% * 7 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">6</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">8</div>
+              <div class="bar-only" style="height: calc(25% * 8 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">7</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">9</div>
+              <div class="bar-only" style="height: calc(25% * 9 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">8</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">8</div>
+              <div class="bar-only" style="height: calc(25% * 8 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">9</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">7</div>
+              <div class="bar-only" style="height: calc(25% * 7 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">10</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">6</div>
+              <div class="bar-only" style="height: calc(25% * 6 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">11</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">5</div>
+              <div class="bar-only" style="height: calc(25% * 5 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">12</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">4</div>
+              <div class="bar-only" style="height: calc(25% * 4 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">13</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">3</div>
+              <div class="bar-only" style="height: 25%">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">14</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">3</div>
+              <div class="bar-only" style="height: 25%">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">15</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="histogram-container action">
+          <div class="histogram-header">Action Frequency</div>
+          <div class="histogram action" id="originalActionHistogram">
+            <div class="bar-container" id="pool">
+              <div class="number-count">9</div>
+              <div class="bar-only" style="height: 31.5%">
+                <div class="empty-bar"></div>
+                <div class="full-bar pool"></div>
+              </div>
+              <img class="action-img" src="images/pool.png" />
+            </div>
+            <div class="bar-container" id="fence">
+              <div class="number-count">18</div>
+              <div class="bar-only" style="height: 63%">
+                <div class="empty-bar"></div>
+                <div class="full-bar fence"></div>
+              </div>
+              <img class="action-img" src="images/fence.png" />
+            </div>
+            <div class="bar-container" id="orange">
+              <div class="number-count">9</div>
+              <div class="bar-only" style="height: 31.5%">
+                <div class="empty-bar"></div>
+                <div class="full-bar orange"></div>
+              </div>
+              <img class="action-img" src="images/orange.png" />
+            </div>
+            <div class="bar-container" id="park">
+              <div class="number-count">18</div>
+              <div class="bar-only" style="height: 63%">
+                <div class="empty-bar"></div>
+                <div class="full-bar park"></div>
+              </div>
+              <img class="action-img" src="images/park.png" />
+            </div>
+            <div class="bar-container" id="bis">
+              <div class="number-count">9</div>
+              <div class="bar-only" style="height: 31.5%">
+                <div class="empty-bar"></div>
+                <div class="full-bar bis"></div>
+              </div>
+              <img class="action-img" src="images/bis.png" />
+            </div>
+            <div class="bar-container" id="purple">
+              <div class="number-count">18</div>
+              <div class="bar-only" style="height: 63%">
+                <div class="empty-bar"></div>
+                <div class="full-bar purple"></div>
+              </div>
+              <img class="action-img" src="images/purple.png" />
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <button
+            type="button"
+            class="text-button"
+            onclick="toggleStatistics(this, true)"
+          >
+            Show Statistics
+          </button>
+        </footer>
+      </div>
+      <div id="moonBlock" class="game-block">
+        <header>
+          <div class="spacing-row">
+            <button onclick="backToHome()" class="icon-button">
+              <img src="images/home-white.png" />
+            </button>
+            <h1>Welcome To... The Moon!</h1>
+            <button onclick="toggleAnimations(this)" class="icon-button">
+              <img src="images/waves-white.png" />
+            </button>
+          </div>
+        </header>
+        <main class="animated">
+          <div class="stats-block"></div>
+          <div class="card-block">
+            <div class="card-row" id="moonNumberRow">
+              <div class="card">
+                <img class="next-action" />
+                <div class="inner-card">
+                  <div class="number">#</div>
+                </div>
+              </div>
+              <div class="card">
+                <img class="next-action" />
+                <div class="inner-card">
+                  <div class="number">#</div>
+                </div>
+              </div>
+              <div class="card">
+                <img class="next-action" />
+                <div class="inner-card">
+                  <div class="number">#</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-row" id="moonActionRow">
+              <div class="card">
+                <div class="inner-card-back">
+                  <img class="action" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="inner-card-back">
+                  <img class="action" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="inner-card-back">
+                  <img class="action" />
+                </div>
+              </div>
+            </div>
+            <div class="button-container">
+              <button
+                type="button"
+                id="moonDrawButton"
+                onclick="showNextCards(this)"
+              >
+                Next Cards
+              </button>
+            </div>
+
+            <div class="round-number-container">
+              <p>Rounds Until Shuffle: <span id="moonRoundCounter">20</span></p>
+            </div>
+          </div>
+        </main>
+        <div class="histogram-container number">
+          <div class="histogram-header">Card Frequency</div>
+          <div class="histogram number" id="moonNumberHistogram">
+            <div class="bar-container">
+              <div class="number-count">2</div>
+              <div class="bar-only" style="height: calc(30% * 2 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">1</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">2</div>
+              <div class="bar-only" style="height: calc(30% * 2 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">2</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">3</div>
+              <div class="bar-only" style="height: 30%">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">3</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">4</div>
+              <div class="bar-only" style="height: calc(30% * 4 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">4</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">5</div>
+              <div class="bar-only" style="height: calc(30% * 5 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">5</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">6</div>
+              <div class="bar-only" style="height: calc(30% * 6 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">6</div>
+            </div>
+            <div class="bar-container number">
+              <div class="number-count">6</div>
+              <div class="bar-only" style="height: calc(30% * 6 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">7</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">7</div>
+              <div class="bar-only" style="height: calc(30% * 7 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">8</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">6</div>
+              <div class="bar-only" style="height: calc(30% * 6 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">9</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">6</div>
+              <div class="bar-only" style="height: calc(30% * 6 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">10</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">5</div>
+              <div class="bar-only" style="height: calc(30% * 5 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">11</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">4</div>
+              <div class="bar-only" style="height: calc(30% * 4 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">12</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">3</div>
+              <div class="bar-only" style="height: 30%">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">13</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">2</div>
+              <div class="bar-only" style="height: calc(30% * 2 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">14</div>
+            </div>
+            <div class="bar-container">
+              <div class="number-count">2</div>
+              <div class="bar-only" style="height: calc(30% * 2 / 3)">
+                <div class="empty-bar"></div>
+                <div class="full-bar number"></div>
+              </div>
+              <div class="card-num">15</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="histogram-container action">
+          <div class="histogram-header">Action Frequency</div>
+          <div class="histogram action" id="moonActionHistogram">
+            <div class="bar-container" id="water">
+              <div class="number-count">7</div>
+              <div class="bar-only" style="height: 31.5%">
+                <div class="empty-bar"></div>
+                <div class="full-bar water"></div>
+              </div>
+              <img class="action-img" src="images/water.png" />
+            </div>
+            <div class="bar-container" id="robot">
+              <div class="number-count">14</div>
+              <div class="bar-only" style="height: 63%">
+                <div class="empty-bar"></div>
+                <div class="full-bar robot"></div>
+              </div>
+              <img class="action-img" src="images/robot.png" />
+            </div>
+            <div class="bar-container" id="astronaut">
+              <div class="number-count">7</div>
+              <div class="bar-only" style="height: 31.5%">
+                <div class="empty-bar"></div>
+                <div class="full-bar astronaut"></div>
+              </div>
+              <img class="action-img" src="images/astronaut.png" />
+            </div>
+            <div class="bar-container" id="plant">
+              <div class="number-count">14</div>
+              <div class="bar-only" style="height: 63%">
+                <div class="empty-bar"></div>
+                <div class="full-bar plant"></div>
+              </div>
+              <img class="action-img" src="images/plant.png" />
+            </div>
+            <div class="bar-container" id="planning">
+              <div class="number-count">7</div>
+              <div class="bar-only" style="height: 31.5%">
+                <div class="empty-bar"></div>
+                <div class="full-bar planning"></div>
+              </div>
+              <img class="action-img" src="images/planning.png" />
+            </div>
+            <div class="bar-container" id="energy">
+              <div class="number-count">14</div>
+              <div class="bar-only" style="height: 63%">
+                <div class="empty-bar"></div>
+                <div class="full-bar energy"></div>
+              </div>
+              <img class="action-img" src="images/energy.png" />
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <button
+            type="button"
+            class="text-button"
+            onclick="toggleStatistics(this, true)"
+          >
+            Show Statistics
+          </button>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="cardsScript.js"></script>
+</html>
